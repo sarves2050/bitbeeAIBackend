@@ -15,13 +15,11 @@ const UserEmail = require("./mongodb/userEmail/userEmail");
 app.use(bodyParser.json());
 app.use(
   cors({
-    origin: function (origin, callback) {
-      if (!origin) return callback(null, true);
-      return callback(null, origin);
-    },
-    credentials: true,
+    origin: '*',  // Allow all domains
+    credentials: true,  // Allows cookies to be sent with cross-origin requests
   })
 );
+
 
 
 
